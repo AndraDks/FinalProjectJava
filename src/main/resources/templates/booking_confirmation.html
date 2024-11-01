@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Booking Confirmation</title>
+    <link rel="stylesheet" type="text/css" href="/css/booking_confirmation.css">
+</head>
+<body>
+<h1>Booking Confirmation</h1>
+<p>You have booked <strong th:text="${hotel.name}">Hotel Name</strong> for a total price of
+    <strong th:text="${totalPrice}"></strong> dollars.</p>
+
+<p>Booking Details:</p>
+<ul>
+    <li>Number of Days: <span th:text="${days}"></span></li>
+    <li>Number of Persons: <span th:text="${persons}"></span></li>
+    <li>Start Date: <span th:text="${startDate}"></span></li>
+    <li th:if="${allInclusive}">All-inclusive option selected!</li>
+</ul>
+
+<a href="/home">Go to Home</a>
+</body>
+</html>

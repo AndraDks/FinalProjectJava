@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Hotel</title>
+    <link rel="stylesheet" href="/css/add_hotel.css">
+</head>
+<body>
+<div class="form-container">
+    <h1>Add New Hotel</h1>
+    <p>Please fill in the details below to add a new hotel.</p>
+
+    <form action="#" th:action="@{/admin/add-hotel}" th:object="${hotel}" method="post">
+        <label for="countryName">Country:</label>
+        <input type="text" id="countryName" th:field="*{countryName}" required />
+
+        <label for="cityName">City:</label>
+        <input type="text" id="cityName" th:field="*{cityName}" required />
+
+        <label for="hotelName">Hotel Name:</label>
+        <input type="text" id="hotelName" th:field="*{hotelName}" required />
+
+        <label for="pricePerNight">Price per Night:</label>
+        <input type="number" id="pricePerNight" th:field="*{pricePerNight}" required />
+
+        <label for="hasAllInclusive">All Inclusive:</label>
+        <input type="checkbox" id="hasAllInclusive" th:field="*{hasAllInclusive}" />
+
+        <button type="submit">Add Hotel</button>
+    </form>
+</div>
+</body>
+</html>

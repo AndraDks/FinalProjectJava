@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>News Check</title>
+    <link rel="stylesheet" type="text/css" href="/css/news_check.css">
+
+</head>
+<body>
+<h1>Stay Updated with the Latest News</h1>
+
+<form action="/news-check" method="get">
+    <input type="text" name="query" placeholder="Enter keyword" value="What are you interested in?">
+    <button type="submit">Search</button>
+</form>
+<h2>Results for <span th:text="${query}">Query</span></h2>
+
+<div class="card-container" th:if="${searchResults}">
+    <!--  <br>-->
+    <div class="news-card" th:each="news : ${searchResults}">
+        <h3 th:text="${news.title}">Title</h3>
+        <p th:text="${news.description}">Description</p>
+        <a th:href="${news.url}" target="_blank">Read more</a>
+    </div>
+</div>
+<div class="btns">
+    <a th:if="${currentPage > 1}" th:href="@{/news-check(query=${query}, page=${currentPage - 1}, pageSize=${pageSize})}">Previous</a>
+    <a th:href="@{/news-check(query=${query}, page=${currentPage + 1}, pageSize=${pageSize})}">Next</a>
+</div>
+
+<a href="/home">Home</a>
+</body>
+</html>

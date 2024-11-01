@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>News Page</title>
+    <link rel="stylesheet" href="/css/news.css">
+
+</head>
+<body>
+<h1 th:text="${pageHeader}"></h1>
+<p>Stay updated with the latest news and trends around the world.</p>
+
+<label for="filter">Filter by topic:</label>
+<input type="text" id="filter" placeholder="Enter topic here...">
+<button onclick="searchNews()">Search</button>
+
+<div id="news-container">
+</div>
+
+<a href="/home">Back Home</a>
+
+<!---->
+</body>
+</html>

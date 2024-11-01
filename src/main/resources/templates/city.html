@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${city.name} + ' Details'">City Details</title>
+    <link rel="stylesheet" href="/css/city.css">
+
+    <style>
+        body {
+            background-image: url([[${cityImageUrl}]]);
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+<h1 th:text="${city.name}">City Name</h1>
+<p th:text="'Temperature: ' + ${temperature} + '°C'">Temperature</p>
+<p th:text="'Conditions: ' + ${conditionText}">Conditions</p>
+<p th:text="'Humidity: ' + ${humidity} + '%'">Humidity</p>
+<ul>
+    <li th:each="hotel : ${hotels}">
+        <a th:href="@{'/hotel/' + ${hotel.id}}" th:text="${hotel.name}">Hotel Name</a>
+    </li>
+</ul>
+
+<!--<a href="@{'/country/' + ${city.country.id}}">Back to Country</a>-->
+<button onclick="history.back()">Back to Country</button>
+
+<br>
+<a href="/home">Home</a>
+</body>
+</html>

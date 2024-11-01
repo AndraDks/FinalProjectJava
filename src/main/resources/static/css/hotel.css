@@ -1,0 +1,118 @@
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://mid-east.info/wp-content/uploads/2021/09/hyatt-centric.jpg') no-repeat center center fixed;
+
+    background-size: cover;
+
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.details-container {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 8px;
+    padding: 30px;
+    width: 500px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #2C3E50;
+    text-align: center;
+}
+
+p {
+    font-size: 18px;
+    color: #34495E;
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    color: #34495E;
+    font-weight: bold;
+}
+
+input[type="number"],
+input[type="date"],
+input[type="checkbox"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input[type="number"]:focus,
+input[type="date"]:focus {
+    border-color: #2980b9;
+}
+
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+    transform: scale(1.2);
+    vertical-align: middle;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #2980b9;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #1a5987;
+}
+
+.button-small {
+    padding: 5px 10px;
+    background-color: #34495E;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.button-small:hover {
+    background-color: #2C3E50;
+}
+
+a {
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #1a5987;
+}
+
+@media (max-width: 500px) {
+    .details-container {
+        width: 90%;
+        padding: 20px;
+    }
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title th:text="${country.name} + ' Details'">Country Details</title>
+    <link rel="stylesheet" type="text/css" href="/css/country.css">
+    <style>
+        body {
+            background-image: url([[${imageUrl}]]);
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+<h1 th:text="${country.name}">Country Name</h1>
+<h2>Available cities:</h2>
+<!--<p>Here are the available cities:</p>-->
+
+<div class="card-container">
+    <div class="city-card" th:each="city : ${cities}">
+        <a th:href="@{'/city/' + ${city.id}}" th:text="${city.name}">City Name</a>
+        <p th:text="${city.cityDescription}">Description</p>
+        <img th:src="${city.cityImageUrl != null ? city.cityImageUrl : 'https://img.freepik.com/premium-photo/blurred-city-street-image-night-abstract-blur-urban-city-street-road-with-lighting-bokeh-background-there-is-noise-photo-due-lack-light_1028938-523448.jpg'}" alt="Image of ${city.name}" />
+
+    </div>
+</div>
+<a href="/home" class="back-home-btn">Back Home</a>
+
+<h2>Latest News</h2>
+<div class="card-container">
+    <div class="news-card" th:each="news, iterStat : ${headlines}" th:if="${iterStat.index < 3}">
+        <h3 th:text="${news.title}">Title</h3>
+        <p th:text="${news.description}">Description</p>
+        <a th:href="${news.url}" target="_blank">Read more</a>
+    </div>
+</div>
+
+<a href="/news-check" class="btn">View More News</a>
+
+
+</body>
+</html>

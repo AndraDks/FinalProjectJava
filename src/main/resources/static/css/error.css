@@ -1,0 +1,44 @@
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2023/08/error-message.jpg');
+
+background-size: cover;
+    background-position: center;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #fff;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3em;
+    color: #ffd700;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #eee;
+}
+
+a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffd700;
+    color: #4a4a4a;
+    border-radius: 5px;
+    font-size: 1em;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+a:hover {
+    background-color: #e6b800;
+    transform: translateY(-2px);
+}

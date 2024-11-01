@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="/css/login.css">
+</head>
+<body>
+<div class="login-container">
+    <div th:if="${param.logout}">
+        <h3>You have successfully logged out.</h3>
+    </div>
+
+    <h1>Welcome Back!</h1>
+    <h3>Log in to your booking dashboard and manage your reservations effortlessly.</h3>
+
+    <div th:if="${error}" class="error-message" role="alert">
+        <p th:text="${error}">Invalid credentials. Please try again.</p>
+    </div>
+    <form action="/login" method="post">
+        <div th:if="${error}" class="error-message">
+            Invalid credentials, please try again.
+        </div>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <div class="signup-link">
+        <a href="/signup">Don't have an account? Sign up here</a>
+    </div>
+</div>
+</body>
+</html>

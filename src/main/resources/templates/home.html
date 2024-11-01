@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Booking Application</title>
+    <link rel="stylesheet" type="text/css" href="/css/home.css">
+</head>
+<body>
+<h1 th:text="'Hello, ' + ${username} + '!'">Hello, User!</h1>
+<h1>Welcome to the Booking Application!</h1>
+<p>What would you like to visit next? Select a country to view available cities and hotels.</p>
+<div th:if="${isAdmin}" class="user-buttons">
+    <a href="/admin/add-hotel" class="user-button">Add New Hotel</a>
+    <a href="/weather-check" class="user-button">Weather Check</a>
+    <!--    <br><br>-->
+    <a href="/news-check" class="user-button">News Check</a>
+    <a href="/logout" class="logout-button">Logout</a>
+
+</div>
+<div th:if="${isEditor}" id="weather-section" class="user-buttons">
+    <a href="/weather-check" class="user-button">Weather Check</a>
+    <a href="/news-check" class="user-button">News Check</a>
+</div>
+<!--<h2>Available Countries</h2>-->
+<div class="country-cards">
+    <div th:each="country : ${countries}" class="country-card">
+        <h2 th:text="${country.name}">Country Name</h2>
+        <img th:src="${country.imageUrl != null ? country.imageUrl : '/images/default-country.jpg'}"
+             class="country-image" alt="Country Image"/>
+        <p th:text="${country.description}">Country Description</p>
+
+        <div class="button-container">
+            <a th:href="@{/country/{id}(id=${country.id})}" class="view-hotels-button">View Hotels</a>
+        </div>
+    </div>
+</div>
+
+<div th:if="${isUser}" class="user-buttons">
+    <a href="/weather-check" class="user-button">Weather Check</a>
+    <a href="/news-check" class="user-button">News Check</a>
+    <br>
+    <br>
+    <a href="/hotel/question" class="user-button">Ask a Question</a>
+    <a href="/hotel/report" class="user-button">Report a Problem</a>
+</div>
+
+</body>
+</html>

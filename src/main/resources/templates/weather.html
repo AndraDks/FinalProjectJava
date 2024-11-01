@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/weather.css">
+
+    <title>Weather for City</title>
+    <style>
+        body {
+            background-image: url([[${imageUrl}]]);
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+<div id="root">
+    <div id="card">
+        <h2 th:text="${locationName}">City Name</h2>
+        <p th:text="'Temperature: ' + ${temperature} + '°C'">Temperature</p>
+        <p th:text="'Conditions: ' + ${conditionText}">Conditions</p>
+        <p th:text="'Humidity: ' + ${humidity} + '%'">Humidity</p>
+        <a href="/weather-check" class="btn">Search Again</a>
+        <a href="/home" class="btn">Home</a>
+
+    </div>
+</div>
+</body>
+</html>

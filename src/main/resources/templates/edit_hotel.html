@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Hotel</title>
+    <link rel="stylesheet" type="text/css" href="/css/edit_hotel.css">
+
+</head>
+<body>
+<div class="form-container">
+    <h1>Edit Hotel</h1>
+
+    <form th:action="@{'/admin/edit-hotel/' + ${hotel.id}}" method="post">
+        <label for="name">Hotel Name:</label>
+        <input type="text" id="name" name="hotelName" th:value="${hotel.name}" required/>
+
+        <label for="price">Price per Night:</label>
+        <input type="number" id="price" name="pricePerNight" th:value="${hotel.pricePerNight}" required/>
+
+        <label for="allInclusive">All Inclusive:</label>
+        <input type="checkbox" id="allInclusive" name="hasAllInclusive"
+               th:checked="${hotel.hasAllInclusive}"/>
+
+        <button type="submit">Save Changes</button>
+    </form>
+
+    <a href="/home">Back to Home</a>
+</div>
+</body>
+</html>

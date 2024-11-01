@@ -1,0 +1,111 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url([[${imageUrl}]]) no-repeat center center fixed;
+
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+h1 {
+    font-size: 3em;
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+p {
+    font-size: 1.5em;
+    text-align: center;
+    margin: 10px 0;
+    color: #dcdcdc;
+    background-color: rgba(0, 0, 0, 0.7);
+
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+li {
+    margin: 10px 0;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 1.2em;
+    text-align: center;
+    display: block;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+}
+
+a:hover {
+    color: #ff4500;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+button {
+    padding: 10px 20px;
+    margin: 20px auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #ffd700;
+    transform: translateY(-2px);
+}
+
+a[href="/home"] {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+a[href="/home"]:hover {
+    background-color: #ffd700;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em; /* on mobile */
+    }
+
+    p {
+        font-size: 1.2em;
+    }
+
+    a {
+        font-size: 1em;
+    }
+
+    button {
+        font-size: 1em;
+    }
+}
